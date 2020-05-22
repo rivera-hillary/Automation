@@ -1,4 +1,4 @@
-describe('', function() {
+describe('Activación de secciones', function() {
     it ('Ir a la pàgina de wawandco', function() {
         cy.visit('/');
     })
