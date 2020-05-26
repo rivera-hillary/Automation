@@ -38,9 +38,10 @@ describe('Dirección de url', function() {
     it('Se dirija a la url de la red social Twitter', function() {
         cy.get('.social > ul > li').eq(4).find('a').should('have.attr','href').and('eq','https://twitter.com/wawandco');
     })
-    //Falla la prueba después de esperar 1 min y no dirigirse a la url
+    // Falla la prueba después de esperar 1 min y no dirigirse a la url
     it('Se dirija a la url del correo', function() {
         cy.get('.phone-mail > ul > li > a').click();
         cy.url().should('include','/linkto:hello@wawand.co');
+        // Debe ser mailto:hello@wawand.co
     })
 })
