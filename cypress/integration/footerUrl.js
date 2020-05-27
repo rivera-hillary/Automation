@@ -24,16 +24,16 @@ describe('Dirección de url', function() {
     })
     // Redes sociales
     it('Se dirija a la url de la red social Dribble', function() {
-        cy.get('.social > ul > li').eq(0).find('a').should('have.attr','href').and('eq','https://dribbble.com/wawandco');
+        cy.get('.social > ul > li:nth-child(1) a').should('have.attr','href').and('eq','https://dribbble.com/wawandco');
     })
     it('Se dirija a la url de la red social Facebook', function() {
-        cy.get('.social > ul > li').eq(1).find('a').should('have.attr','href').and('eq','https://www.facebook.com/wawandco/');
+        cy.get('.social > ul > li:nth-child(2) a').should('have.attr','href').and('eq','https://www.facebook.com/wawandco/');
     })
     it('Se dirija a la url de la red social Github', function() {
-        cy.get('.social > ul > li').eq(2).find('a').should('have.attr','href').and('eq','https://github.com/wawandco');
+        cy.get('.social > ul > li:nth-child(3) a').should('have.attr','href').and('eq','https://github.com/wawandco');
     })
     it('Se dirija a la url de la red social Linkedin', function() {
-        cy.get('.social > ul > li').eq(3).find('a').should('have.attr','href').and('eq','https://www.linkedin.com/company/wawandco/');
+        cy.get('.social > ul > li:nth-child(4) a').should('have.attr','href').and('eq','https://www.linkedin.com/company/wawandco/');
     })
     it('Se dirija a la url de la red social Twitter', function() {
         cy.get('.social > ul > li').eq(4).find('a').should('have.attr','href').and('eq','https://twitter.com/wawandco');
@@ -41,7 +41,6 @@ describe('Dirección de url', function() {
     // Falla la prueba después de esperar 1 min y no dirigirse a la url
     it('Se dirija a la url del correo', function() {
         cy.get('.phone-mail > ul > li > a').click();
-        cy.url().should('include','/linkto:hello@wawand.co');
-        // Debe ser mailto:hello@wawand.co
+        cy.url().should('have.attr','href').and('eq','mailto:hello@wawand.co');
     })
 })
