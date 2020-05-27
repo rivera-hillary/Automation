@@ -1,12 +1,12 @@
 describe('Validación', function() {
-    it('Ingresar a la página wawandco', function() {
+    beforeEach('Ingresar a la página wawandco', function() {
         cy.visit('/');
         cy.get('.nav-link.btn-cta').click();
-        cy.url().should('include','/contact');
     })
     it('Validar el correo', function() {
-        cy.get('h5 > a').contains('hello@wawand.co');
-        cy.get('h5 > a').should('have.attr','href').and('eq','mailto:hello@wawand.co');
+        cy.get('h5 > a').contains('hola@wawand.co');
+        cy.get('h5 > a').click();
+        cy.url().should('include','/contactame');
     })
     it('Validar las direcciones', function() {
         cy.get('ul > li:nth-child(1)').contains('Carrera 66B # 49 - 90');
@@ -21,7 +21,7 @@ describe('Validación', function() {
     it('Validar url de redes sociales', function() {
         cy.get('.social > ul > li:nth-child(1) a').should('have.attr','href').and('eq','https://dribbble.com/wawandco');
         cy.get('.social > ul > li:nth-child(2) a').should('have.attr','href').and('eq','https://www.facebook.com/wawandco/');
-        cy.get('.social > ul > li:nth-child(3) a').should('have.attr','href').and('eq','https://github.com/wawandco');
+        cy.get('.social > ul > li:nth-child(3) a').should('have.attr','href').and('eq','https://gitlab.com/wawandco');
         cy.get('.social > ul > li:nth-child(4) a').should('have.attr','href').and('eq','https://www.linkedin.com/company/wawandco/');
         cy.get('.social > ul > li:nth-child(5) a').should('have.attr','href').and('eq','https://twitter.com/wawandco');
     })
