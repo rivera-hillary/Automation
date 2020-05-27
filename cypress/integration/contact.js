@@ -1,9 +1,7 @@
 describe('Validación', function() {
-    beforeEach('Ingresar a la página wawandco', function() {
+    it('Ingresar a la página wawandco', function() {
         cy.visit('/');
         cy.get('.nav-link.btn-cta').click();
-    })
-    it('Se encuentra en contact', function() {
         cy.url().should('include','/contact');
     })
     it('Validar el correo', function() {
