@@ -1,7 +1,6 @@
 describe('Dirección de url', function() {
     beforeEach('Ingresar a la página wawandco', function() {
         cy.visit('/');
-        cy.viewport(1000, 660);
     })
     it ('Confirmar la url donde se encuentra', function() {
         cy.url().should('eq', 'https://wawand.co/');
