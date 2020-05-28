@@ -4,8 +4,7 @@ describe('Validación', function() {
         cy.get('.nav-link.btn-cta').click();
     })
     it('Validar el correo', function() {
-        cy.get('h5 > a').contains('hola@wawand.co');
-        cy.get('h5 > a').click();
+        cy.get('h5 > a').contains('hola@wawand.co').click();
         cy.url().should('include','/contactame');
     })
     it('Validar las direcciones', function() {
