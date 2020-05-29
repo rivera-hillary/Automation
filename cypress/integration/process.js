@@ -4,6 +4,9 @@ describe('Validación de rutas en Our Process', function() {
         cy.get('.nav-link.process').click();
         cy.url().should('include','/process');
     })
+    it('Validar texto principal', function() {
+        cy.get('h1').contains('How we do it.');
+    })
     it('Validar ruta de la sección Ready for the kick off?', function() {
         cy.get('.cta-white').click();
         cy.url().should('include','/contact');
