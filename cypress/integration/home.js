@@ -1,4 +1,4 @@
-describe('Validación de rutas', function() {
+describe('Validación de rutas en home', function() {
     beforeEach('Ir a la página de wawandco', function() {
         cy.visit('/');
         cy.url().should('eq', 'https://wawand.co/');
