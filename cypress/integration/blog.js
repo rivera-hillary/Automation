@@ -24,67 +24,42 @@ describe('Validación de rutas en Blog', function() {
     it("Validar ruta de la sección Go's Locations & Alpine Docker image", function() {
         cy.get(':nth-child(1) > .link > a').click();
         cy.url().should('include','/posts/');
-    })
-    //Click en All post
-    it("Validar All post en la ruta de la sección Go's Locations & Alpine Docker image", function() {
-        cy.get(':nth-child(1) > .link > a').click();
-        cy.url().should('include','/posts/');
+        //Click en All post
         cy.get('.breadcrumb > li:nth-child(1)').click();
         cy.url().should('include','/blog/');
     })
-    
     it('Validar ruta de la sección TIP: Ensuring your team uses YARN/NPM', function() {
         cy.get(':nth-child(2) > .link > a').click();
         cy.url().should('include','/posts/');
-    })
-    //Click en All post
-    it('Validar All post en la ruta de la sección TIP: Ensuring your team uses YARN/NPM', function() {
-        cy.get(':nth-child(2) > .link > a').click();
-        cy.url().should('include','/posts/');
+        //Click en All post
         cy.get('.breadcrumb > li:nth-child(1)').click();
         cy.url().should('include','/blog/');
     })
     it('Validar ruta de la sección Testing Buffalo Applications', function() {
         cy.get(':nth-child(3) > .link > a').click();
         cy.url().should('include','/posts/');
-    })
-    //Click en All post
-    it('Validar All post en la ruta de la sección Testing Buffalo Applications', function() {
-        cy.get(':nth-child(3) > .link > a').click();
-        cy.url().should('include','/posts/');
+        //Click en All post
         cy.get('.breadcrumb > li:nth-child(1)').click();
         cy.url().should('include','/blog/');
     })
     it('Validar ruta de la sección A fridge contains drinks', function() {
         cy.get(':nth-child(4) > .link > a').click();
         cy.url().should('include','/posts/');
-    })
-    //Click en All post
-    it('Validar All post en la ruta de la sección A fridge contains drinks', function() {
-        cy.get(':nth-child(4) > .link > a').click();
-        cy.url().should('include','/posts/');
+        //Click en All post
         cy.get('.breadcrumb > li:nth-child(1)').click();
         cy.url().should('include','/blog/');
     })
     it('Validar ruta de la sección How to mock an external service for tests in GO', function() {
         cy.get(':nth-child(5) > .link > a').click();
         cy.url().should('include','/posts/');
-    })
-    //Click en All post
-    it('Validar All post en la ruta de la sección How to mock an external service for tests in GO', function() {
-        cy.get(':nth-child(5) > .link > a').click();
-        cy.url().should('include','/posts/');
+        //Click en All post
         cy.get('.breadcrumb > li:nth-child(1)').click();
         cy.url().should('include','/blog/');
     })
     it("Validar ruta de la sección How's it like to write an Android app in 2019?", function() {
         cy.get(':nth-child(6) > .link > a').click();
         cy.url().should('include','/posts/');
-    })
-    //Click en All post
-    it("Validar All post en la ruta de la sección How's it like to write an Android app in 2019?", function() {
-        cy.get(':nth-child(6) > .link > a').click();
-        cy.url().should('include','/posts/');
+        //Click en All post
         cy.get('.breadcrumb > li:nth-child(1)').click();
         cy.url().should('include','/blog/');
     })
