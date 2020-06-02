@@ -54,4 +54,33 @@ describe('Validación de rutas en Blog', function() {
         cy.get('.cta-white').click();
         cy.url().should('include','/contact');
     })
+    //Validar las categorías de Product Development
+    it('Validar que muestre las entradas de la categoría Product Development', function() {
+        cy.on('uncaught:exception', (err, runnable) => {
+            expect(err.message).to.include('something about the error')
+            done()
+            return false
+        })
+        cy.get('.filters > .d-flex > :nth-child(2)').click();
+        cy.get(':nth-child(1) > .head > .tags > .tag > a').should('have.attr','href').and('eq','https://wawand.co/tags/product-development');
+        cy.get(':nth-child(2) > .head > .tags > .tag > a').should('have.attr','href').and('eq','https://wawand.co/tags/product-development');
+        cy.get(':nth-child(3) > .head > .tags > :nth-child(1) > a').should('have.attr','href').and('eq','https://wawand.co/tags/product-development');
+        cy.get(':nth-child(4) > .head > .tags > .tag > a').should('have.attr','href').and('eq','https://wawand.co/tags/product-development');
+        cy.get(':nth-child(5) > .head > .tags > .tag > a').should('have.attr','href').and('eq','https://wawand.co/tags/product-development');
+    })
+    //Validar las categorías de Software Development
+    it('Validar que muestre las entradas de la categoría Software Development', function() {
+        cy.on('uncaught:exception', (err, runnable) => {
+            expect(err.message).to.include('something about the error')
+            done()
+            return false
+        })
+        cy.get('.filters > .d-flex > :nth-child(3)').click();
+        cy.get(':nth-child(1) > .head > .tags > li:nth-child(1) > a').should('have.attr','href').and('eq','https://wawand.co/tags/software-development');
+        cy.get(':nth-child(2) > .head > .tags > li:nth-child(1) > a').should('have.attr','href').and('eq','https://wawand.co/tags/software-development');
+        cy.get(':nth-child(3) > .head > .tags > li:nth-child(1) > a').should('have.attr','href').and('eq','https://wawand.co/tags/software-development');
+        cy.get(':nth-child(4) > .head > .tags > li:nth-child(1) > a').should('have.attr','href').and('eq','https://wawand.co/tags/software-development');
+        cy.get(':nth-child(5) > .head > .tags > li:nth-child(1) > a').should('have.attr','href').and('eq','https://wawand.co/tags/software-development');
+        cy.get(':nth-child(6) > .head > .tags > li:nth-child(2) > a').should('have.attr','href').and('eq','https://wawand.co/tags/software-development');
+    })
 })
