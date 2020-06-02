@@ -23,35 +23,79 @@ describe('Validación de rutas en Blog', function() {
     //Validar ruta de entrada del blog:
     it("Validar ruta de la sección Go's Locations & Alpine Docker image", function() {
         cy.get(':nth-child(1) > .link > a').click();
-        cy.url().should('include','/blog/posts/');
+        cy.url().should('include','/posts/');
     })
+    //Click en All post
+    it("Validar All post en la ruta de la sección Go's Locations & Alpine Docker image", function() {
+        cy.get(':nth-child(1) > .link > a').click();
+        cy.url().should('include','/posts/');
+        cy.get('.breadcrumb > li:nth-child(1)').click();
+        cy.url().should('include','/blog/');
+    })
+    
     it('Validar ruta de la sección TIP: Ensuring your team uses YARN/NPM', function() {
         cy.get(':nth-child(2) > .link > a').click();
-        cy.url().should('include','/blog/posts/');
+        cy.url().should('include','/posts/');
+    })
+    //Click en All post
+    it('Validar All post en la ruta de la sección TIP: Ensuring your team uses YARN/NPM', function() {
+        cy.get(':nth-child(2) > .link > a').click();
+        cy.url().should('include','/posts/');
+        cy.get('.breadcrumb > li:nth-child(1)').click();
+        cy.url().should('include','/blog/');
     })
     it('Validar ruta de la sección Testing Buffalo Applications', function() {
         cy.get(':nth-child(3) > .link > a').click();
-        cy.url().should('include','/blog/posts/');
+        cy.url().should('include','/posts/');
+    })
+    //Click en All post
+    it('Validar All post en la ruta de la sección Testing Buffalo Applications', function() {
+        cy.get(':nth-child(3) > .link > a').click();
+        cy.url().should('include','/posts/');
+        cy.get('.breadcrumb > li:nth-child(1)').click();
+        cy.url().should('include','/blog/');
     })
     it('Validar ruta de la sección A fridge contains drinks', function() {
         cy.get(':nth-child(4) > .link > a').click();
-        cy.url().should('include','/blog/posts/');
+        cy.url().should('include','/posts/');
+    })
+    //Click en All post
+    it('Validar All post en la ruta de la sección A fridge contains drinks', function() {
+        cy.get(':nth-child(4) > .link > a').click();
+        cy.url().should('include','/posts/');
+        cy.get('.breadcrumb > li:nth-child(1)').click();
+        cy.url().should('include','/blog/');
     })
     it('Validar ruta de la sección How to mock an external service for tests in GO', function() {
         cy.get(':nth-child(5) > .link > a').click();
-        cy.url().should('include','/blog/posts/');
+        cy.url().should('include','/posts/');
+    })
+    //Click en All post
+    it('Validar All post en la ruta de la sección How to mock an external service for tests in GO', function() {
+        cy.get(':nth-child(5) > .link > a').click();
+        cy.url().should('include','/posts/');
+        cy.get('.breadcrumb > li:nth-child(1)').click();
+        cy.url().should('include','/blog/');
     })
     it("Validar ruta de la sección How's it like to write an Android app in 2019?", function() {
         cy.get(':nth-child(6) > .link > a').click();
-        cy.url().should('include','/blog/posts/');
+        cy.url().should('include','/posts/');
+    })
+    //Click en All post
+    it("Validar All post en la ruta de la sección How's it like to write an Android app in 2019?", function() {
+        cy.get(':nth-child(6) > .link > a').click();
+        cy.url().should('include','/posts/');
+        cy.get('.breadcrumb > li:nth-child(1)').click();
+        cy.url().should('include','/blog/');
     })
     //Validar la paginación
     it('Validar ruta de la sección Want to know more about us?', function() {
         cy.get('.btn').click();
         cy.url().should('include','/page');
     })
+    //Validar ruta de la sección Want to know more about us?
     it('Validar ruta de la sección Want to know more about us?', function() {
-        cy.get('.cta-white').click();
+        cy.get('.cta-white').click().should('have.attr','href').and('eq','https://wawand.co/contact');;
         cy.url().should('include','/contact');
     })
     //Validar las categorías de Product Development
