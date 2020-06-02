@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/rivera-hillary/Automation#readme",
   "devDependencies": {
-    "cypress": "^4.6.0"
+    "cypress": "^4.7.0"
   }
 }

@@ -3,20 +3,30 @@ describe('Validación de rutas en Blog', function() {
         cy.visit('/blog');
         cy.url().should('include','/blog');
     })
-    //Verificar texto principal de la página: Our Blog.
+    //Verificar texto principal de la pagina: Our Blog.
     it('Validar texto principal', function() {
         cy.get('h1').contains('Our Blog.');
     })
-    //Validar el estado activo de cada categoría de entrada del blog:
+    //Validar el estado activo de cada categoria de entrada del blog:
     it('All is active', function() {
         cy.get('.filters > .d-flex > :nth-child(1)').click();
         cy.get('.mr-3:nth-child(1)').should('have.class','active');
     })
     it('Product Development is active', function() {
+        cy.on('uncaught:exception', (err, runnable) => {
+            expect(err.message).to.include('something about the error')
+            done()
+            return false
+        })
         cy.get('.filters > .d-flex > :nth-child(2)').click();
         cy.get('.mr-3:nth-child(2)').should('have.class','active');
     })
     it('Software Development is active', function() {
+        cy.on('uncaught:exception', (err, runnable) => {
+            expect(err.message).to.include('something about the error')
+            done()
+            return false
+        })
         cy.get('.filters > .d-flex > :nth-child(3)').click();
         cy.get('.mr-3:nth-child(3)').should('have.class','active');
     })
@@ -63,17 +73,17 @@ describe('Validación de rutas en Blog', function() {
         cy.get('.breadcrumb > li:nth-child(1)').click();
         cy.url().should('include','/blog/');
     })
-    //Validar la paginación
+    //Validar la paginacion
     it('Validar ruta de la sección Want to know more about us?', function() {
         cy.get('.btn').click();
         cy.url().should('include','/page');
     })
-    //Validar ruta de la sección Want to know more about us?
+    //Validar ruta de la seccion Want to know more about us?
     it('Validar ruta de la sección Want to know more about us?', function() {
         cy.get('.cta-white').click().should('have.attr','href').and('eq','https://wawand.co/contact');;
         cy.url().should('include','/contact');
     })
-    //Validar las categorías de Product Development
+    //Validar las categorias de Product Development
     it('Validar que muestre las entradas de la categoría Product Development', function() {
         cy.on('uncaught:exception', (err, runnable) => {
             expect(err.message).to.include('something about the error')
@@ -87,7 +97,7 @@ describe('Validación de rutas en Blog', function() {
         cy.get(':nth-child(4) > .head > .tags > .tag > a').should('have.attr','href').and('eq','https://wawand.co/tags/product-development');
         cy.get(':nth-child(5) > .head > .tags > .tag > a').should('have.attr','href').and('eq','https://wawand.co/tags/product-development');
     })
-    //Validar las categorías de Software Development
+    //Validar las categorias de Software Development
     it('Validar que muestre las entradas de la categoría Software Development', function() {
         cy.on('uncaught:exception', (err, runnable) => {
             expect(err.message).to.include('something about the error')
